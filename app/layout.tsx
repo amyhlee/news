@@ -33,7 +33,7 @@ export default function RootLayout({
         >
           <SidebarProvider defaultOpen={true}>
             <AppSidebar />
-            <SidebarInset>
+            <SidebarInset className="ml-[var(--sidebar-width)]">
               {children}
             </SidebarInset>
           </SidebarProvider>

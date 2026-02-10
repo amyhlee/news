@@ -8,7 +8,7 @@ const navItems = ["Live Feed", "Analytics", "Insights"]
 
 export function Header() {
   return (
-    <header className="flex items-center px-6 h-[73px] bg-card border-b border-border">
+    <header className="sticky top-0 z-50 flex items-center px-6 h-[73px] bg-card border-b border-border">
       <div className="flex-1 flex justify-center">
         <nav className="flex items-center rounded-full border border-border bg-background shadow-sm">
           {navItems.map((item) => (

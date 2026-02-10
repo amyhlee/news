@@ -80,7 +80,7 @@ const bottomMenuItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="none" className="h-screen">
+    <Sidebar collapsible="none" className="fixed left-0 top-0 h-screen z-40">
       <SidebarHeader className="border-b border-sidebar-border h-[73px] flex items-center justify-center bg-card">
         <div className="flex items-center justify-center px-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="136" height="32" fill="none">
