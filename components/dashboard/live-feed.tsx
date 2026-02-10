@@ -4,8 +4,71 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { ChevronDown } from "lucide-react"
 
 type Sentiment = "Positive" | "Negative" | "Neutral"
+
+const gnomiCountries = [
+  "United States",
+  "Brazil",
+  "Canada",
+  "India",
+  "China",
+  "Taiwan",
+  "South Korea",
+  "France",
+  "Japan",
+  "Italy",
+  "United Kingdom",
+  "Germany",
+  "Russia",
+  "Spain",
+  "Mexico",
+  "Australia",
+  "Indonesia",
+  "Turkey",
+  "Saudi Arabia",
+  "Netherlands",
+  "Switzerland",
+  "Argentina",
+  "Lithuania"
+]
+
+const gnomiTopics = [
+  "Top Stories",
+  "Technology",
+  "Society",
+  "Sports",
+  "Health",
+  "Politics",
+  "Style",
+  "Entertainment",
+  "Business",
+  "Economy",
+  "Science",
+  "World",
+  "Culture",
+  "Environment",
+  "Education",
+  "Travel",
+  "Opinion",
+  "Lifestyle",
+  "Finance",
+  "Climate",
+  "Law & Justice",
+  "Health Policy",
+  "Innovation",
+  "Human Interest"
+]
 
 interface Article {
   id: number
@@ -297,13 +360,23 @@ export function LiveFeed() {
   const [visibleArticles, setVisibleArticles] = useState<Article[]>([])
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState<string>("All Countries")
+  const [selectedTopic, setSelectedTopic] = useState<string>("All Topics")
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const ARTICLES_PER_PAGE = 10
 
+  // Filter articles based on selected filters
+  const filteredArticles = articles.filter((article) => {
+    const matchesCountry = selectedCountry === "All Countries" || article.category === selectedCountry
+    const matchesTopic = selectedTopic === "All Topics" // For now, no topic filtering since articles don't have topics yet
+    return matchesCountry && matchesTopic
+  })
+
   // Load initial articles
   useEffect(() => {
-    setVisibleArticles(articles.slice(0, ARTICLES_PER_PAGE))
-  }, [])
+    setVisibleArticles(filteredArticles.slice(0, ARTICLES_PER_PAGE))
+    setPage(1)
+  }, [selectedCountry, selectedTopic])
 
   // Handle scroll for infinite loading
   useEffect(() => {
@@ -314,12 +387,12 @@ export function LiveFeed() {
       const { scrollTop, scrollHeight, clientHeight } = container
       const isNearBottom = scrollHeight - scrollTop - clientHeight < 100
 
-      if (isNearBottom && !loading && visibleArticles.length < articles.length) {
+      if (isNearBottom && !loading && visibleArticles.length < filteredArticles.length) {
         setLoading(true)
         // Simulate loading delay
         setTimeout(() => {
           const nextPage = page + 1
-          const newArticles = articles.slice(0, nextPage * ARTICLES_PER_PAGE)
+          const newArticles = filteredArticles.slice(0, nextPage * ARTICLES_PER_PAGE)
           setVisibleArticles(newArticles)
           setPage(nextPage)
           setLoading(false)
@@ -333,7 +406,60 @@ export function LiveFeed() {
 
   return (
     <section className="flex flex-col gap-4 h-full">
-      <h2 className="text-lg font-semibold text-foreground">Live Feed</h2>
+      <div className="flex items-center gap-3">
+        <h2 className="text-lg font-semibold text-foreground">Live Feed</h2>
+
+        {/* Country Filter */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="sm" className="gap-2">
+              {selectedCountry}
+              <ChevronDown className="h-4 w-4 opacity-50" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="w-56 max-h-[300px] overflow-y-auto">
+            <DropdownMenuLabel>Filter by Country</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => setSelectedCountry("All Countries")}>
+              All Countries
+            </DropdownMenuItem>
+            {gnomiCountries.map((country) => (
+              <DropdownMenuItem
+                key={country}
+                onClick={() => setSelectedCountry(country)}
+              >
+                {country}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {/* Topic Filter */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="sm" className="gap-2">
+              {selectedTopic}
+              <ChevronDown className="h-4 w-4 opacity-50" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="w-56 max-h-[300px] overflow-y-auto">
+            <DropdownMenuLabel>Filter by Topic</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => setSelectedTopic("All Topics")}>
+              All Topics
+            </DropdownMenuItem>
+            {gnomiTopics.map((topic) => (
+              <DropdownMenuItem
+                key={topic}
+                onClick={() => setSelectedTopic(topic)}
+              >
+                {topic}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+
       <div
         ref={scrollContainerRef}
         className="flex flex-col gap-3 overflow-y-auto max-h-[calc(100vh-12rem)] pr-2 scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent"
