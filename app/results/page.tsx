@@ -28,6 +28,9 @@ export default function ResultsPage() {
   const searchParams = useSearchParams()
   const preferences = searchParams.get("preferences") || ""
 
+  // Get current day of week
+  const dayOfWeek = new Date().toLocaleDateString("en-US", { weekday: "long" })
+
   // Flatten all articles from all sections
   const allArticles: Article[] = []
   Object.values(newsData.sections).forEach((section: any) => {
@@ -61,19 +64,11 @@ export default function ResultsPage() {
             </Card>
           )}
 
-          {/* Results Summary */}
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">
-                {allArticles.length} Articles Found
-              </h2>
-              <p className="text-sm text-muted-foreground mt-1">
-                Personalized news based on your interests
-              </p>
-            </div>
-            <Badge variant="secondary" className="text-xs">
-              Updated {newsData.scraped_at}
-            </Badge>
+          {/* Results Header */}
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-foreground">
+              Your {dayOfWeek} Curated Selection
+            </h2>
           </div>
 
           {/* Articles Grid */}
