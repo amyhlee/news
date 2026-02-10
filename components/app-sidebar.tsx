@@ -27,6 +27,7 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar"
 import { Badge } from "@/components/ui/badge"
+import { useAIChat } from "@/components/ai-chat-context"
 
 const navigationItems = [
   {
@@ -80,6 +81,7 @@ const bottomMenuItems = [
 
 export function AppSidebar() {
   const pathname = usePathname()
+  const { setOpen } = useAIChat()
 
   return (
     <Sidebar collapsible="none" className="fixed left-0 top-0 h-screen z-40">
@@ -97,21 +99,43 @@ export function AppSidebar() {
             <SidebarMenu>
               {navigationItems.map((item) => {
                 const isActive = pathname === item.url
+                const isAINewsAgent = item.title === "AI News Agent"
+
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild tooltip={item.title} isActive={isActive}>
-                      <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
-                        {item.badge && (
-                          <Badge
-                            variant="secondary"
-                            className="ml-auto bg-green-500/10 text-green-500 hover:bg-green-500/20 border-0"
-                          >
-                            {item.badge}
-                          </Badge>
-                        )}
-                      </a>
+                    <SidebarMenuButton
+                      asChild={!isAINewsAgent}
+                      tooltip={item.title}
+                      isActive={isActive}
+                      onClick={isAINewsAgent ? () => setOpen(true) : undefined}
+                    >
+                      {isAINewsAgent ? (
+                        <>
+                          <item.icon />
+                          <span>{item.title}</span>
+                          {item.badge && (
+                            <Badge
+                              variant="secondary"
+                              className="ml-auto bg-green-500/10 text-green-500 hover:bg-green-500/20 border-0"
+                            >
+                              {item.badge}
+                            </Badge>
+                          )}
+                        </>
+                      ) : (
+                        <a href={item.url}>
+                          <item.icon />
+                          <span>{item.title}</span>
+                          {item.badge && (
+                            <Badge
+                              variant="secondary"
+                              className="ml-auto bg-green-500/10 text-green-500 hover:bg-green-500/20 border-0"
+                            >
+                              {item.badge}
+                            </Badge>
+                          )}
+                        </a>
+                      )}
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 )

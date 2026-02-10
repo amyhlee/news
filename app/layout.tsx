@@ -7,6 +7,7 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { ThemeProvider } from "@/components/theme-provider"
 import { AIChatFAB } from "@/components/ai-chat-fab"
+import { AIChatProvider } from "@/components/ai-chat-context"
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,13 +33,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SidebarProvider defaultOpen={true}>
-            <AppSidebar />
-            <SidebarInset className="ml-[var(--sidebar-width)]">
-              {children}
-              <AIChatFAB />
-            </SidebarInset>
-          </SidebarProvider>
+          <AIChatProvider>
+            <SidebarProvider defaultOpen={true}>
+              <AppSidebar />
+              <SidebarInset className="ml-[var(--sidebar-width)]">
+                {children}
+                <AIChatFAB />
+              </SidebarInset>
+            </SidebarProvider>
+          </AIChatProvider>
         </ThemeProvider>
       </body>
     </html>

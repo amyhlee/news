@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from "lucide-react"
+import newsData from "@/data/gnomi_news_articles.json"
 
 type Sentiment = "Positive" | "Negative" | "Neutral"
 
@@ -78,22 +79,38 @@ interface Article {
   sentiment: Sentiment
   imageUrl: string
   category?: string
+  topic?: string
   loading?: boolean
 }
 
 // Helper function to determine sentiment based on title keywords
 function determineSentiment(title: string): Sentiment {
   const lowerTitle = title.toLowerCase()
-  if (lowerTitle.includes("criticized") || lowerTitle.includes("disaster") || lowerTitle.includes("bleeding") || lowerTitle.includes("clash") || lowerTitle.includes("raid")) {
+  if (lowerTitle.includes("criticized") || lowerTitle.includes("disaster") || lowerTitle.includes("bleeding") || lowerTitle.includes("clash") || lowerTitle.includes("raid") || lowerTitle.includes("restricts")) {
     return "Negative"
   }
-  if (lowerTitle.includes("boost") || lowerTitle.includes("welcomes") || lowerTitle.includes("heights") || lowerTitle.includes("extends")) {
+  if (lowerTitle.includes("boost") || lowerTitle.includes("welcomes") || lowerTitle.includes("heights") || lowerTitle.includes("extends") || lowerTitle.includes("ride")) {
     return "Positive"
   }
   return "Neutral"
 }
 
-const articles: Article[] = [
+// Load and flatten articles from JSON data
+const articles: Article[] = Object.values(newsData.sections).flatMap((section: any) =>
+  section.articles.map((article: any) => ({
+    id: article.id,
+    title: article.title,
+    source: article.source,
+    time: article.timeAgo,
+    sentiment: determineSentiment(article.title),
+    imageUrl: article.image,
+    category: article.country || section.region, // Use article country or section region
+    topic: section.category,
+  }))
+)
+
+// Old hardcoded articles - keeping for reference but not used
+const _oldArticles: Article[] = [
   {
     id: 1,
     title: "Kamala Harris's team criticized for using \"trendy language\" that backfired",
@@ -368,7 +385,7 @@ export function LiveFeed() {
   // Filter articles based on selected filters
   const filteredArticles = articles.filter((article) => {
     const matchesCountry = selectedCountry === "All Countries" || article.category === selectedCountry
-    const matchesTopic = selectedTopic === "All Topics" // For now, no topic filtering since articles don't have topics yet
+    const matchesTopic = selectedTopic === "All Topics" || article.topic === selectedTopic
     return matchesCountry && matchesTopic
   })
 

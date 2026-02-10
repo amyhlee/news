@@ -14,9 +14,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Textarea } from "@/components/ui/textarea"
+import { useAIChat } from "@/components/ai-chat-context"
 
 export function AIChatFAB() {
-  const [open, setOpen] = useState(false)
+  const { open, setOpen } = useAIChat()
   const [preferences, setPreferences] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter()
