@@ -136,9 +136,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <div className="flex-1" />
-
-        <SidebarGroup className="px-2 py-2 mt-auto">
+        <SidebarGroup className="px-2 py-2">
           <SidebarGroupContent>
             <SidebarMenu>
               {bottomMenuItems.map((item) => (
@@ -154,22 +152,29 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
+        <SidebarGroup className="px-2 py-2">
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild size="lg" className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 hover:from-purple-500/20 hover:to-blue-500/20">
+                  <a href="#upgrade">
+                    <Sparkles className="text-purple-500" />
+                    <div className="flex flex-col items-start">
+                      <span className="font-semibold">Upgrade</span>
+                      <span className="text-xs text-muted-foreground">Get the most from GNOMI</span>
+                    </div>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <div className="flex-1" />
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-sidebar-border">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild size="lg" className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 hover:from-purple-500/20 hover:to-blue-500/20">
-              <a href="#upgrade">
-                <Sparkles className="text-purple-500" />
-                <div className="flex flex-col items-start">
-                  <span className="font-semibold">Upgrade</span>
-                  <span className="text-xs text-muted-foreground">Get the most from GNOMI</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+      <SidebarFooter>
         <div className="px-3 py-2 text-xs text-muted-foreground">
           <div>About GNOMI • Contact us • Blog</div>
           <div className="mt-1">Privacy • Terms of Service</div>
