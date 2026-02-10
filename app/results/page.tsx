@@ -1,5 +1,6 @@
 "use client"
 
+import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,7 +25,7 @@ type Section = {
   articles: Article[]
 }
 
-export default function ResultsPage() {
+function ResultsContent() {
   const searchParams = useSearchParams()
   const preferences = searchParams.get("preferences") || ""
 
@@ -38,12 +39,7 @@ export default function ResultsPage() {
   })
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* Header */}
-      <Header />
-
-      {/* Content */}
-      <main className="flex-1 overflow-y-auto p-6">
+    <main className="flex-1 overflow-y-auto p-6">
         <div className="max-w-4xl mx-auto space-y-6">
           {/* Preferences Display */}
           {preferences && (
@@ -122,6 +118,24 @@ export default function ResultsPage() {
           </div>
         </div>
       </main>
+  )
+}
+
+export default function ResultsPage() {
+  return (
+    <div className="flex flex-col h-screen">
+      <Header />
+      <Suspense fallback={
+        <main className="flex-1 overflow-y-auto p-6">
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-foreground">Loading...</h2>
+            </div>
+          </div>
+        </main>
+      }>
+        <ResultsContent />
+      </Suspense>
     </div>
   )
 }
