@@ -18,11 +18,15 @@ interface TopicBubble {
 }
 
 const trendingTopics: TopicBubble[] = [
-  { name: "Crypto", size: 52, x: 30, y: 50, color: "hsl(186, 45%, 38%)" },
-  { name: "Climate\nChange", size: 42, x: 72, y: 28, color: "hsl(215, 25%, 30%)" },
-  { name: "Metaverse", size: 38, x: 52, y: 78, color: "hsl(186, 45%, 50%)" },
-  { name: "Fed Rates", size: 32, x: 18, y: 78, color: "hsl(210, 25%, 45%)" },
-  { name: "Biopie", size: 28, x: 88, y: 60, color: "hsl(17, 70%, 55%)" },
+  { name: "Crypto", size: 70, x: 35, y: 52, color: "hsl(186, 45%, 50%)" },
+  { name: "Climate\nChange", size: 55, x: 78, y: 28, color: "hsl(215, 35%, 35%)" },
+  { name: "Metaverse", size: 52, x: 78, y: 75, color: "hsl(215, 35%, 35%)" },
+  { name: "Fed Rates", size: 48, x: 18, y: 78, color: "hsl(215, 35%, 35%)" },
+  { name: "Metaverse", size: 44, x: 50, y: 88, color: "hsl(17, 70%, 65%)" },
+  { name: "Bopie", size: 42, x: 90, y: 55, color: "hsl(17, 70%, 65%)" },
+  { name: "Crypto", size: 36, x: 14, y: 32, color: "hsl(17, 70%, 65%)" },
+  { name: "", size: 28, x: 28, y: 15, color: "hsl(210, 15%, 55%)" },
+  { name: "", size: 26, x: 58, y: 12, color: "hsl(210, 15%, 55%)" },
 ]
 
 function AISummaryCard() {
@@ -50,42 +54,44 @@ function AISummaryCard() {
 function TrendingTopicsCard() {
   return (
     <Card className="border-border">
-      <CardHeader className="p-4 pb-2">
-        <CardTitle className="text-sm font-semibold text-card-foreground">
+      <CardHeader className="p-6 pb-4">
+        <CardTitle className="text-2xl font-bold text-card-foreground">
           Trending Topics
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-4 pt-0">
-        <div className="relative h-44 w-full">
+      <CardContent className="p-6 pt-0">
+        <div className="relative h-64 w-full">
           <svg viewBox="0 0 100 100" className="h-full w-full" aria-label="Trending topics bubble chart">
-            {trendingTopics.map((topic) => (
-              <g key={topic.name}>
+            {trendingTopics.map((topic, index) => (
+              <g key={`${topic.name}-${index}`}>
                 <circle
                   cx={topic.x}
                   cy={topic.y}
                   r={topic.size / 2.5}
                   fill={topic.color}
-                  opacity={0.85}
                 />
-                <text
-                  x={topic.x}
-                  y={topic.y}
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fill="white"
-                  fontSize={topic.size > 40 ? 5 : 4}
-                  fontWeight="600"
-                >
-                  {topic.name.includes("\n") ? (
-                    topic.name.split("\n").map((line, i) => (
-                      <tspan key={i} x={topic.x} dy={i === 0 ? -3 : 6}>
-                        {line}
-                      </tspan>
-                    ))
-                  ) : (
-                    topic.name
-                  )}
-                </text>
+                {topic.name && (
+                  <text
+                    x={topic.x}
+                    y={topic.y}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fill="white"
+                    fontSize={topic.size > 60 ? 6.5 : topic.size > 45 ? 5 : 4}
+                    fontWeight="600"
+                    style={{ pointerEvents: 'none' }}
+                  >
+                    {topic.name.includes("\n") ? (
+                      topic.name.split("\n").map((line, i) => (
+                        <tspan key={i} x={topic.x} dy={i === 0 ? -2.5 : 5}>
+                          {line}
+                        </tspan>
+                      ))
+                    ) : (
+                      topic.name
+                    )}
+                  </text>
+                )}
               </g>
             ))}
           </svg>
