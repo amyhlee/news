@@ -125,27 +125,28 @@ function LiveStockTicker() {
 function SectorHeatMap() {
   return (
     <Card className="border-border">
-      <CardHeader className="p-4 pb-2">
-        <CardTitle className="text-base font-semibold text-card-foreground">
+      <CardHeader className="p-6 pb-4">
+        <CardTitle className="text-2xl font-bold text-card-foreground">
           Sector Heat Map
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-4 pt-0">
-        <div className="grid grid-cols-4 gap-1">
+      <CardContent className="p-6 pt-0">
+        <div className="grid grid-cols-4 gap-1 rounded-lg overflow-hidden">
           {sectorData.map((sector) => (
             <div
               key={sector.name}
-              className="flex flex-col items-center justify-center rounded-md p-2 text-center"
+              className="flex flex-col items-center justify-center p-2 text-center overflow-hidden"
               style={{
                 backgroundColor: sector.color,
                 gridColumn: sector.size >= 3 ? "span 2" : undefined,
-                minHeight: sector.size >= 3 ? "56px" : "48px",
+                gridRow: sector.size >= 4 ? "span 2" : undefined,
+                minHeight: sector.size >= 3 ? "80px" : "60px",
               }}
             >
-              <span className="text-[10px] font-medium text-card leading-tight truncate w-full">
+              <span className="text-xs font-semibold text-white leading-tight overflow-hidden w-full">
                 {sector.name}
               </span>
-              <span className="text-[9px] text-card/80">{sector.change}</span>
+              <span className="text-[10px] font-medium text-white/90 mt-0.5">{sector.change}</span>
             </div>
           ))}
         </div>
