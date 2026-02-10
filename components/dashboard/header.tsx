@@ -1,7 +1,8 @@
 "use client"
 
-import { Search, Bell, Settings } from "lucide-react"
+import { Search, Bell } from "lucide-react"
 import { Input } from "@/components/ui/input"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const navItems = ["Live Feed", "Analytics", "Insights"]
 
@@ -33,10 +34,7 @@ export function Header() {
             className="pl-9 pr-4 h-10 w-56 rounded-full bg-background border-border text-sm"
           />
         </div>
-        <button className="flex items-center justify-center h-10 w-10 rounded-full bg-background border border-border text-muted-foreground hover:text-foreground transition-colors">
-          <Settings className="h-5 w-5" />
-          <span className="sr-only">Settings</span>
-        </button>
+        <ThemeToggle />
         <button className="relative flex items-center justify-center h-10 w-10 rounded-full bg-background border border-border text-muted-foreground hover:text-foreground transition-colors">
           <Bell className="h-5 w-5" />
           <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-destructive" />
