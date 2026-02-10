@@ -1,0 +1,455 @@
+{
+  "source": "https://www.gnomi.com/en/news",
+  "scraped_at": "2026-02-10",
+  "total_articles": 50,
+  "sections": {
+    "global_top_stories": {
+      "region": "Global",
+      "category": "Top Stories",
+      "count": 20,
+      "articles": [
+        {
+          "id": 1,
+          "title": "Kamala Harris's team criticized for using \"trendy language\" that backfired - i-CABLE",
+          "image": "https://icable-prod.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2026/02/11074815/N_20260210_HARRIS-NUMBER-260210-2300.jpg",
+          "description": "Political figures sometimes use trendy language to connect with young people, but the effectiveness of this approach depends on timing. Recently, the team of former U.S. Vice President Kamala Harris has been criticized for missing the mark.",
+          "source": "i-cable",
+          "timeAgo": "28 minutes ago",
+          "country": "China"
+        },
+        {
+          "id": 2,
+          "title": "The truth about Trump's tariff disaster that's bleeding America's economy and alienating allies",
+          "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202602/the-white-house-also-said-india-and-the-us-have-agreed-on-a-framework-to-expand-defence-cooperation-072036559-16x9.jpg",
+          "description": "Trump promised a new era of reciprocal trade dominance, but his $350 billion deals are collapsing worldwide. From South Korea to China, retaliation is escalating, inflation is rising, and allies are questioning American reliability.",
+          "source": "indiatoday",
+          "timeAgo": "34 minutes ago",
+          "country": "India"
+        },
+        {
+          "id": 3,
+          "title": "The U.S. Department of Justice has revealed several names from documents related to the Epstein case",
+          "image": "https://cdnn21.img.ria.ru/images/151236/10/1512361097_0:355:2400:1705_1920x1080_80_0_0_45f686962a59b40e8251990b8e030404.jpg",
+          "description": "The U.S. Department of Justice has revealed a number of names that were previously redacted from publicly released documents in the case of the scandal-ridden financier Jeffrey Epstein.",
+          "source": "ria-ru",
+          "timeAgo": "38 minutes ago",
+          "country": "Russia"
+        },
+        {
+          "id": 4,
+          "title": "A political scientist believes that Ukraine will only be welcomed into the EU in words",
+          "image": "https://cdnn21.img.ria.ru/images/07e8/06/1b/1955847682_736:0:3072:1314_1920x1080_80_0_0_f2c79c5773ab37566bcc31757d6a3b4c.jpg",
+          "description": "The European Union's idea of partial membership for Ukraine is fundamentally no different from the association agreement, said political scientist Ivan in an interview with the newspaper VZGLYAD.",
+          "source": "ria-ru",
+          "timeAgo": "38 minutes ago",
+          "country": "Russia"
+        },
+        {
+          "id": 5,
+          "title": "Nigeria: the Senate amends the new electoral law, results will be transmitted in real time",
+          "image": "https://www.mediapart.fr/assets/front/images/social/og_image/journal.png",
+          "description": "The Nigerian Senate adopted an amendment on Tuesday allowing for the real-time electronic transmission of election results, according to official sources.",
+          "source": "mediapart",
+          "timeAgo": "39 minutes ago",
+          "country": "France"
+        },
+        {
+          "id": 6,
+          "title": "Russia restricts access to Telegram",
+          "image": "https://cdn.prod.www.spiegel.de/images/d6264910-8768-476c-94d4-2871cdb91758_w1200_r1.778_fpx45.74_fpy55.jpg",
+          "description": "Telegram is an important communication channel in Russia, but now the authorities are restricting access to the messenger. However, the measures have apparently also hindered a state-aligned provider.",
+          "source": "spiegel",
+          "timeAgo": "40 minutes ago",
+          "country": "Germany"
+        },
+        {
+          "id": 7,
+          "title": "EU defense commissioner to tour Europe in effort to ramp up missile output for Ukraine",
+          "image": "https://tass.com/img/blocks/common/tass_logo_share_eng.png",
+          "description": "Andrius Kubilius recalled that \u20ac60 billion of the \u20ac90 billion in funding for Kiev agreed upon by 24 EU member states for the next two years is earmarked for arms purchases, primarily from European manufacturers.",
+          "source": "tass-ru",
+          "timeAgo": "41 minutes ago",
+          "country": "Russia"
+        },
+        {
+          "id": 8,
+          "title": "The fate of South Africans recruited by Russian forces discussed between Putin and Ramaphosa",
+          "image": "https://www.mediapart.fr/assets/front/images/social/og_image/journal.png",
+          "description": "South African President Cyril Ramaphosa stated that he discussed the repatriation of South Africans fighting alongside Russian forces with his Russian counterpart Vladimir Putin during a phone call on Tuesday.",
+          "source": "mediapart",
+          "timeAgo": "41 minutes ago",
+          "country": "France"
+        },
+        {
+          "id": 9,
+          "title": "Australia urges calm after rally clash - Taipei Times",
+          "image": "https://img.taipeitimes.com/images/2026/02/11/P05-260211-304.jpg",
+          "description": "Australian leaders yesterday urged calm and called on protests to remain peaceful after clashes between police.",
+          "source": "taipeitimes",
+          "timeAgo": "41 minutes ago",
+          "country": "Taiwan"
+        },
+        {
+          "id": 10,
+          "title": "Sri Lanka's palm-sap tappers ride UNESCO boost - Taipei Times",
+          "image": "https://img.taipeitimes.com/images/2026/02/11/P05-260211-317.jpg",
+          "description": "When Sri Lankan mechanic Sarath Ananda left his job in Kuwait to make traditional palm sweets, he never imagined his craft would gain international recognition.",
+          "source": "taipeitimes",
+          "timeAgo": "41 minutes ago",
+          "country": "Taiwan"
+        },
+        {
+          "id": 11,
+          "title": "S Korea spy agency raided over drone flight into North - Taipei Times",
+          "image": "https://img.taipeitimes.com/images/2026/02/11/p05-260211-webpic5AAA.jpg",
+          "description": "Investigators yesterday raided South Korea's spy agency, as they probed possible government links to a drone incursion into North Korea.",
+          "source": "taipeitimes",
+          "timeAgo": "41 minutes ago",
+          "country": "Taiwan"
+        },
+        {
+          "id": 12,
+          "title": "The Blue and White Coalition's negotiations are locked in a black box, with the impact of tariffs on various items leaving the public to piece together the information",
+          "image": "https://udn.com/static/img/UDN_BABY.png",
+          "description": "The signing of the Taiwan-U.S. tariff agreement is imminent, yet the relevant details have not been disclosed. The Executive Yuan is keeping the negotiation details under wraps.",
+          "source": "udn-tw",
+          "timeAgo": "41 minutes ago",
+          "country": "Taiwan"
+        },
+        {
+          "id": 13,
+          "title": "News Perspective / The Tariff Agreement is About to be Signed, Kept Under Wraps...",
+          "image": "https://udn.com/static/img/UDN_BABY.png",
+          "description": "The Taiwan-U.S. tariff agreement is expected to be finalized by the end of this week, but the specifics regarding the items and extent of market opening remain unclear to the public.",
+          "source": "udn-tw",
+          "timeAgo": "41 minutes ago",
+          "country": "Taiwan"
+        },
+        {
+          "id": 14,
+          "title": "Barcelona's unfinished Sagrada Familia basilica hits new heights despite delays - Taipei Times",
+          "image": "https://img.taipeitimes.com/images/2026/02/11/P05-260211-303.jpg",
+          "description": "Barcelona's eternally unfinished Basilica de la Sagrada Familia has grown to become the world's tallest church.",
+          "source": "taipeitimes",
+          "timeAgo": "41 minutes ago",
+          "country": "China"
+        },
+        {
+          "id": 15,
+          "title": "Social media addiction trial starts in LA - Taipei Times",
+          "image": "https://img.taipeitimes.com/images/2026/02/11/P05-260211-315.jpg",
+          "description": "Comparing social media platforms to casinos and addictive drugs, lawyer Mark Lanier on Monday delivered opening arguments in a landmark trial.",
+          "source": "taipeitimes",
+          "timeAgo": "41 minutes ago",
+          "country": "Taiwan"
+        },
+        {
+          "id": 16,
+          "title": "The President of Azerbaijan, Aliyev, welcomed Vance in Baku with an honor guard",
+          "image": "https://russian.rt.com/static/blocks/og-img/pl-17.jpg",
+          "description": "The leader of Azerbaijan, Ilham Aliyev, welcomed American Vice President JD Vance in Baku with an honor guard, reports the APA agency.",
+          "source": "rt-ru",
+          "timeAgo": "45 minutes ago",
+          "country": "Russia"
+        },
+        {
+          "id": 17,
+          "title": "In the wake of the Epstein scandal, Starmer distances himself from speculation about his future",
+          "image": "https://images.delfi.lt/media-api-image-cropper/v1/1f24706b-8ae4-48cd-a972-460ccb23cd88.jpg",
+          "description": "After a dramatic Monday, the leader of the Labour Party stated at a meeting with government ministers that they are strong and united.",
+          "source": "delfi",
+          "timeAgo": "45 minutes ago",
+          "country": "Lithuania"
+        },
+        {
+          "id": 18,
+          "title": "Britain has extended the sanctions exemptions for the Bulgarian subsidiaries of LUKOIL",
+          "image": "https://russian.rt.com/static/blocks/og-img/pl-17.jpg",
+          "description": "The UK authorities have extended the exemptions from sanctions for the Bulgarian subsidiaries of LUKOIL until August. This was reported by the British Ministry of Finance.",
+          "source": "rt-ru",
+          "timeAgo": "47 minutes ago",
+          "country": "Russia"
+        },
+        {
+          "id": 19,
+          "title": "Szijjart\u00f3 condemned EU leaders for their interference in the Ukrainian conflict",
+          "image": "https://russian.rt.com/static/blocks/og-img/pl-17.jpg",
+          "description": "The Hungarian Minister of Foreign Affairs and Trade, Peter Szijjarto, condemned European leaders for their interference in the Ukrainian conflict.",
+          "source": "rt-ru",
+          "timeAgo": "48 minutes ago",
+          "country": "Russia"
+        },
+        {
+          "id": 20,
+          "title": "China says that the Japanese Prime Minister must demonstrate a willingness for dialogue",
+          "image": "https://s1.15min.lt/static/cache/MTIwMHg2MjgsLDk5OSxvcmlnaW5hbCwsaWQ9MTA1Mzc1MjImZGF0ZT0yMDI2JTJGMDIlMkYxMCwyMTA3MzkzNTAx/lin-jianas-johannes-neudecker-dpapicture-alliance-698b546156da4.jpg",
+          "description": "On Tuesday, China demanded that Tokyo first demonstrate concrete actions after the newly elected Japanese Prime Minister Sanae Takaichi stated her willingness to engage.",
+          "source": "15min-lt",
+          "timeAgo": "48 minutes ago",
+          "country": "Lithuania"
+        }
+      ]
+    },
+    "us_politics": {
+      "region": "United States",
+      "category": "Politics",
+      "count": 10,
+      "articles": [
+        {
+          "id": 21,
+          "title": "UN Report Reveals 50-Fold Growth of Al-Qaida Amid Expanding Global Terror Threat - HSToday",
+          "image": "https://www.hstoday.us/wp-content/uploads/2026/02/dsc04612.jpg",
+          "description": "The Global Terrorist Threat From Al-Qaida And The Islamic State Has Become Increasingly Multipolar And Complex, With Both Organizations Adapting Sophisticated Recruitment Strategies And Expanding Operations Across Multiple Continents.",
+          "source": "hstoday",
+          "timeAgo": "19 minutes ago"
+        },
+        {
+          "id": 22,
+          "title": "Canada Replaces Islamophobia and Antisemitism Envoys With New Advisory Council - HSToday",
+          "image": "https://www.hstoday.us/wp-content/uploads/2021/05/rose-butler-HWtFbzNzSA4-unsplash-scaled-1.jpg",
+          "description": "The Canadian Government Is Eliminating Its Special Envoy Positions Focused On Combatting Islamophobia And Antisemitism And Replacing Them With A Single National Advisory Body.",
+          "source": "hstoday",
+          "timeAgo": "19 minutes ago"
+        },
+        {
+          "id": 23,
+          "title": "Coordinated Global Response Needed for Growing Sovereign Citizens Movement, Report Says - HSToday",
+          "image": "https://www.hstoday.us/wp-content/uploads/2026/02/protest.jpg",
+          "description": "A new report calls for coordinated global response to the growing sovereign citizens movement, which has expanded across multiple countries and poses evolving challenges to law enforcement.",
+          "source": "hstoday",
+          "timeAgo": "19 minutes ago"
+        },
+        {
+          "id": 24,
+          "title": "A Topography of the Violence in New Syria - HSToday",
+          "image": "https://www.hstoday.us/wp-content/uploads/2026/02/syria-violence.jpg",
+          "description": "An analysis of the evolving landscape of violence in post-transition Syria, examining the complex dynamics between various armed groups and the challenges facing the new government.",
+          "source": "hstoday",
+          "timeAgo": "19 minutes ago"
+        },
+        {
+          "id": 25,
+          "title": "FBI Releases Image of Masked and Gloved Suspect in Nancy Guthrie Investigation",
+          "image": "https://www.thewrap.com/wp-content/uploads/2026/02/nancy-guthrie-suspect.jpg",
+          "description": "The FBI has released surveillance images showing a masked and gloved suspect in the ongoing Nancy Guthrie investigation, marking the first major lead in the case.",
+          "source": "thewrap",
+          "timeAgo": "20 minutes ago"
+        },
+        {
+          "id": 26,
+          "title": "FBI Releases Photos of Potential Nancy Guthrie Kidnapping Suspect",
+          "image": "https://www.usmagazine.com/wp-content/uploads/2026/02/Promo-Authorities-Release-Photo-of-Potential-Nancy-Guthrie-Kidnapper.jpg",
+          "description": "Authorities Have Shared New Surveillance Photos One Week After Savannah Guthrie's Mom, Nancy Guthrie, Was Reported Missing In Arizona.",
+          "source": "usmagazine",
+          "timeAgo": "23 minutes ago"
+        },
+        {
+          "id": 27,
+          "title": "FBI Releases Surveillance Photos Of Subject In Nancy Guthrie Investigation",
+          "image": "https://deadline.com/wp-content/uploads/2026/02/Guthrie.jpeg",
+          "description": "The FBI Has Released Photos Of A Potential Subject In The Nancy Guthrie Investigation. This Is The First Lead In The Case Since The Mother Of Today Co-Host Savannah Guthrie Was Reported Missing.",
+          "source": "deadline",
+          "timeAgo": "26 minutes ago"
+        },
+        {
+          "id": 28,
+          "title": "Homeland Security Shutdown Nears Amid Stalemate on Immigration Agent Curbs",
+          "image": "https://static01.nyt.com/images/2026/02/10/multimedia/10dc-shutdown-hfo/10dc-shutdown-hfo-facebookJumbo.jpg",
+          "description": "Republicans have so far spurned most of Democrats' demands to rein in federal agents carrying out President Trump's immigration crackdown, threatening a homeland security funding bill ahead of a Friday deadline.",
+          "source": "nytimes",
+          "timeAgo": "27 minutes ago"
+        },
+        {
+          "id": 29,
+          "title": "Lutnick says he 'barely had anything to do with' Epstein amid calls to resign",
+          "image": "https://www.theglobeandmail.com/resizer/v2/lutnick-epstein.jpg",
+          "description": "U.S. Commerce Secretary Howard Lutnick says he barely had anything to do with Jeffrey Epstein amid growing calls for his resignation over past connections to the disgraced financier.",
+          "source": "theglobeandmail",
+          "timeAgo": "38 minutes ago"
+        },
+        {
+          "id": 30,
+          "title": "U.S. Commerce Secretary Lutnick acknowledges meetings with Epstein",
+          "image": "https://th-i.thgim.com/public/incoming/article69210211.ece/alternates/LANDSCAPE_1200/lutnick.jpg",
+          "description": "U.S. Commerce Secretary Howard Lutnick, a member of President Donald Trump's Cabinet, is the highest-profile U.S. official to face bipartisan calls for his resignation over Epstein ties.",
+          "source": "thehindu",
+          "timeAgo": "19 minutes ago"
+        }
+      ]
+    },
+    "us_technology": {
+      "region": "United States",
+      "category": "Technology",
+      "count": 10,
+      "articles": [
+        {
+          "id": 31,
+          "title": "Advancing Innovation: Technology Transitions and Early Investments",
+          "image": "https://www.energy.gov/sites/default/files/2025-04/white-fallback_0.png",
+          "description": "Research Is At The Heart Of Technological Advancements. The Department Of Energy Works Collaboratively To Ensure That Innovative Energy Technologies Move Through the development pipeline.",
+          "source": "energy",
+          "timeAgo": "7 minutes ago"
+        },
+        {
+          "id": 32,
+          "title": "Air Force Reserve Activates First Offensive Cyber Operations Squadron - HSToday",
+          "image": "https://www.hstoday.us/wp-content/uploads/2026/02/1000w_q95-1.webp",
+          "description": "By Order Of The Department Of The Air Force, The 98th Cyberspace Operations Squadron Was Activated On January 2nd, 2026, And Became The First Offensive Cyber Squadron In The Air Force Reserve.",
+          "source": "hstoday",
+          "timeAgo": "22 minutes ago"
+        },
+        {
+          "id": 33,
+          "title": "AI Promised to Save Time. Researchers Just Said It's Doing the Opposite",
+          "image": "https://imageio.forbes.com/specials-images/imageserve/ai-time-research/960x0.jpg",
+          "description": "AI Promised To Save Time. Researchers Just Said It's Doing The Opposite. An Eight-Month Study Finds Generative AI Is Creating More Work, Not Less.",
+          "source": "inc",
+          "timeAgo": "32 minutes ago"
+        },
+        {
+          "id": 34,
+          "title": "Why Habit Formation Isn't About Willpower",
+          "image": "https://techbullion.com/wp-content/uploads/2026/02/habit-formation.jpg",
+          "description": "Most advice about building habits focuses on motivation and willpower. But the science of behavior change tells a different story.",
+          "source": "techbullion",
+          "timeAgo": "33 minutes ago"
+        },
+        {
+          "id": 35,
+          "title": "Pepe Coin Gamble or Bitcoin Everlight Certainty? App Offers Mode Operators...",
+          "image": "https://techbullion.com/wp-content/uploads/2026/02/crypto-trading.jpg",
+          "description": "Meme coin trading has re-entered the spotlight during the 2026 market downturn, though recent price action has reinforced how quickly speculative momentum can unwind.",
+          "source": "techbullion",
+          "timeAgo": "43 minutes ago"
+        },
+        {
+          "id": 36,
+          "title": "GoPlus Security: H2 2025 Fundamentals Update and Product Developments",
+          "image": "https://cdn.sanity.io/images/s3y3vcno/production/20875b3216491fc1fab8edc0b8f7cdfaa7cc3df2-1200x628.png",
+          "description": "GoPlus Security's H2 2025 Update Highlights SafeToken Locker Growth, Stable B2B Demand, Expanded Transaction Protection, And New AI-Native Security Products.",
+          "source": "coindesk",
+          "timeAgo": "53 minutes ago"
+        },
+        {
+          "id": 37,
+          "title": "Cyber Success Trifecta: Education, Certifications & Experience",
+          "image": "https://eu-images.contentstack.com/v3/assets/blt6d90778a997de1cd/bltfeabfda42baee19a/697d19fff577843f12847110/cybersecurity1800_MediaPhotos_alamy.jpg",
+          "description": "As Organizations Grapple With Increasingly Sophisticated Threats, The Need For Leaders Who Can Balance Technological Innovation With Robust Risk Management Is Paramount.",
+          "source": "darkreading",
+          "timeAgo": "53 minutes ago"
+        },
+        {
+          "id": 38,
+          "title": "Zoomex: Precise Systems of Fairness and Transparency by Design",
+          "image": "https://media.coindesk.com/uploads/2026/02/zoomex-fairness.jpg",
+          "description": "Leader In Cryptocurrency, Bitcoin, Ethereum, XRP, Blockchain, DeFi, Digital Finance And Web 3.0 News With Analysis, Video And Live Price Updates.",
+          "source": "coindesk",
+          "timeAgo": "53 minutes ago"
+        },
+        {
+          "id": 39,
+          "title": "Reviving the Hacker Ethos That Built Cybersecurity",
+          "image": "https://eu-images.contentstack.com/v3/assets/blt6d90778a997de1cd/darkreading-confidential.jpg",
+          "description": "Dark Reading Confidential podcast explores how the original hacker ethos of curiosity and community is being revived to address modern cybersecurity challenges.",
+          "source": "darkreading",
+          "timeAgo": "53 minutes ago"
+        },
+        {
+          "id": 40,
+          "title": "How to enable Kernel-mode Hardware-enforced Stack Protection in Windows 11",
+          "image": "https://www.bleepstatic.com/content/hl-images/2026/02/windows-11-kernel-stack-protection.jpg",
+          "description": "Kernel-Mode Hardware-Enforced Stack Protection Is A Security Feature Introduced In Windows 11 22H2 That Protects Systems From Various Memory Attacks, Such As Stack Buffer Overflows.",
+          "source": "bleepingcomputer",
+          "timeAgo": "53 minutes ago"
+        }
+      ]
+    },
+    "us_entertainment": {
+      "region": "United States",
+      "category": "Entertainment",
+      "count": 10,
+      "articles": [
+        {
+          "id": 41,
+          "title": "Bad Bunny Versus Irving Berlin",
+          "image": "https://assets.zerohedge.com/s3fs-public/styles/inline_image_mobile/public/inline-images/Bad%20Bunny%20Versus%20Irving%20Berlin.jpg",
+          "description": "Bad Bunny Performing At The Super Bowl Halftime Show. A Deluge Of Bad Bunny Takes Had In Common Was They Were The Same Argument.",
+          "source": "zerohedge",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 42,
+          "title": "Darren Lynn Bousman & Lauren LaVera discuss TWISTED",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/twisted_poster_huge.jpg",
+          "description": "Darren Lynn Bousman and Lauren LaVera discuss their new horror film TWISTED. Horror fans are eating well this month.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 43,
+          "title": "Jason Biggs Directorial Debut UNTITLED HOME INVASION ROMANCE Now Available!",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/home_invasion_romance_huge.jpg",
+          "description": "Jason Biggs, aka Jim from American Pie, makes his directorial debut with Untitled Home Invasion Romance, now available to audiences.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 44,
+          "title": "A Conversation with RENTAL FAMILY Writer/Director HIKARI",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/rental_family_huge.jpg",
+          "description": "Hikari's Rental Family Is The Feel-Good Charmer That Everyone Needs Around Thanksgiving, A Gentle Reminder That Family Is What You Make It.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 45,
+          "title": "Cynthia von Buhler Discusses MINKY WOODCOCK: THE GIRL CALLED CTHULHU",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/minky_woodcock_huge.jpg",
+          "description": "Writer/Artist Cynthia Von Buhler talks about her latest graphic novel collection, Minky Woodcock: The Girl Called Cthulhu.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 46,
+          "title": "Troy Duffy Talks THE BOONDOCK SAINTS - Past, Present, and Future",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/boondock_saints_blood_origin_huge.jpg",
+          "description": "Writer/Director Troy Duffy (The Boondock Saints) Discusses His New Prequel Novel Blood Origin, The Enduring Fans Of The Boondock Saints, And Rumors Surrounding A Possible New Entry In The Series.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 47,
+          "title": "Catch NOT READY FOR PRIME TIME Off-Broadway in NYC",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/bar_sketch__cast_of_not_ready_for_prime_time_huge.jpg",
+          "description": "A review of Not Ready For Prime Time, an Off-Broadway production in NYC that delivers laughs and nostalgia for classic sketch comedy fans.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 48,
+          "title": "NYCC 2025 Exclusive! David Dastmalchian Talks Mental Wellness and Pushing 'Through'",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/dastmalchian_through_huge.jpg",
+          "description": "Eric McClanahan sits down with multi-hyphenate creator David Dastmalchian at New York City Comic Con to discuss his new graphic novel 'Through' and his forthcoming directorial debut.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 49,
+          "title": "Krypto Currency!! Hercules Loves James Gunn's SUPERMAN!!",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/superman_krypto_huge.jpg",
+          "description": "Superman 2025 — Hercules shares his thoughts on James Gunn's Superman, calling it a worthy addition to the DC Universe.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        },
+        {
+          "id": 50,
+          "title": "Barbarella Chats with some of SHEROES' Sheroes!",
+          "image": "https://media.aintitcool.com/media/_versions/article_images_2022/mceric/sheroes_huge.jpg",
+          "description": "What happens when a producer of Spring Breakers writes and directs a movie? Sheroes, apparently. Jordan Gertner's debut feature is reviewed.",
+          "source": "aintitcool",
+          "timeAgo": "8 minutes ago"
+        }
+      ]
+    }
+  }
+}

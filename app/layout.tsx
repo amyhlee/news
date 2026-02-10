@@ -6,6 +6,7 @@ import './globals.css'
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { ThemeProvider } from "@/components/theme-provider"
+import { AIChatFAB } from "@/components/ai-chat-fab"
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({
             <AppSidebar />
             <SidebarInset className="ml-[var(--sidebar-width)]">
               {children}
+              <AIChatFAB />
             </SidebarInset>
           </SidebarProvider>
         </ThemeProvider>

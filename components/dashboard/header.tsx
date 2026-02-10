@@ -1,5 +1,6 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { Search, Bell } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -7,22 +8,35 @@ import { ThemeToggle } from "@/components/theme-toggle"
 const navItems = ["Live Feed", "Analytics", "Insights"]
 
 export function Header() {
+  const pathname = usePathname()
+
+  // Determine active tab based on route
+  const getActiveTab = () => {
+    return "Live Feed" // Default to Live Feed for home page
+  }
+
+  const activeTab = getActiveTab()
+
   return (
     <header className="sticky top-0 z-50 flex items-center px-6 h-[73px] bg-card border-b border-border">
       <div className="flex-1 flex justify-center">
         <nav className="flex items-center rounded-full border border-border bg-background shadow-sm">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              className={`px-6 py-2 text-sm font-medium rounded-full transition-colors ${
-                item === "Live Feed"
-                  ? "bg-background text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {item}
-            </button>
-          ))}
+          {navItems.map((item) => {
+            const href = item === "Live Feed" ? "/" : "#"
+            return (
+              <a
+                key={item}
+                href={href}
+                className={`px-6 py-2 text-sm font-medium rounded-full transition-colors ${
+                  item === activeTab
+                    ? "bg-background text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item}
+              </a>
+            )
+          })}
         </nav>
       </div>
 
