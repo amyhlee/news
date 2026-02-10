@@ -2,38 +2,19 @@
 
 import { TrendingUp, TrendingDown } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Area,
-  AreaChart,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-} from "recharts"
+import { useEffect, useState } from "react"
 
-const sp500Data = [
-  { time: "9:30", value: 5180 },
-  { time: "10:00", value: 5195 },
-  { time: "10:30", value: 5210 },
-  { time: "11:00", value: 5200 },
-  { time: "11:30", value: 5220 },
-  { time: "12:00", value: 5230 },
-  { time: "12:30", value: 5215 },
-  { time: "13:00", value: 5225 },
-  { time: "13:30", value: 5240 },
-  { time: "14:00", value: 5245 },
-]
-
-const nasdaqData = [
-  { time: "9:30", value: 4080 },
-  { time: "10:00", value: 4070 },
-  { time: "10:30", value: 4060 },
-  { time: "11:00", value: 4050 },
-  { time: "11:30", value: 4045 },
-  { time: "12:00", value: 4055 },
-  { time: "12:30", value: 4040 },
-  { time: "13:00", value: 4035 },
-  { time: "13:30", value: 4030 },
-  { time: "14:00", value: 4029 },
+const sp500Stocks = [
+  { symbol: "AAPL", name: "Apple", price: 178.45, change: 2.34, changePercent: 1.33 },
+  { symbol: "MSFT", name: "Microsoft", price: 412.89, change: 5.67, changePercent: 1.39 },
+  { symbol: "GOOGL", name: "Alphabet", price: 142.56, change: -1.23, changePercent: -0.86 },
+  { symbol: "AMZN", name: "Amazon", price: 168.34, change: 3.45, changePercent: 2.09 },
+  { symbol: "NVDA", name: "NVIDIA", price: 875.21, change: 12.34, changePercent: 1.43 },
+  { symbol: "TSLA", name: "Tesla", price: 234.56, change: -4.32, changePercent: -1.81 },
+  { symbol: "META", name: "Meta", price: 456.78, change: 8.90, changePercent: 1.99 },
+  { symbol: "BRK.B", name: "Berkshire", price: 389.45, change: 2.11, changePercent: 0.54 },
+  { symbol: "JPM", name: "JP Morgan", price: 178.90, change: 1.56, changePercent: 0.88 },
+  { symbol: "V", name: "Visa", price: 267.34, change: 3.21, changePercent: 1.21 },
 ]
 
 const sectorData = [
@@ -54,57 +35,87 @@ const sectorData = [
   { name: "Compe...", change: "-1.05%", size: 1, color: "hsl(0, 72%, 62%)" },
 ]
 
-function IndexCard({
-  name,
-  value,
-  isPositive,
-  data,
-}: {
-  name: string
-  value: string
-  isPositive: boolean
-  data: { time: string; value: number }[]
-}) {
+function LiveStockTicker() {
+  const [stocks, setStocks] = useState(sp500Stocks)
+
+  useEffect(() => {
+    // Simulate live price updates every 3 seconds
+    const interval = setInterval(() => {
+      setStocks(prevStocks =>
+        prevStocks.map(stock => {
+          const randomChange = (Math.random() - 0.5) * 2 // Random change between -1 and 1
+          const newPrice = stock.price + randomChange
+          const newChange = stock.change + randomChange
+          const newChangePercent = (newChange / stock.price) * 100
+
+          return {
+            ...stock,
+            price: parseFloat(newPrice.toFixed(2)),
+            change: parseFloat(newChange.toFixed(2)),
+            changePercent: parseFloat(newChangePercent.toFixed(2)),
+          }
+        })
+      )
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  // Duplicate stocks twice for seamless infinite scroll
+  const allStocks = [...stocks, ...stocks]
+
   return (
     <Card className="border-border">
-      <CardContent className="p-4">
-        <p className="text-sm text-muted-foreground">{name}</p>
-        <div className="flex items-center gap-2 mt-1">
-          <span className="text-2xl font-bold text-card-foreground">{value}</span>
-          {isPositive ? (
-            <TrendingUp className="h-5 w-5" style={{ color: "hsl(145, 55%, 42%)" }} />
-          ) : (
-            <TrendingDown className="h-5 w-5" style={{ color: "hsl(0, 72%, 55%)" }} />
-          )}
-        </div>
-        <div className="mt-3 h-16">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={data}>
-              <defs>
-                <linearGradient id={`gradient-${name}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop
-                    offset="0%"
-                    stopColor={isPositive ? "hsl(145, 55%, 42%)" : "hsl(0, 72%, 55%)"}
-                    stopOpacity={0.3}
-                  />
-                  <stop
-                    offset="100%"
-                    stopColor={isPositive ? "hsl(145, 55%, 42%)" : "hsl(0, 72%, 55%)"}
-                    stopOpacity={0}
-                  />
-                </linearGradient>
-              </defs>
-              <XAxis dataKey="time" hide />
-              <YAxis hide domain={["dataMin - 10", "dataMax + 10"]} />
-              <Area
-                type="monotone"
-                dataKey="value"
-                stroke={isPositive ? "hsl(145, 55%, 42%)" : "hsl(0, 72%, 55%)"}
-                fill={`url(#gradient-${name})`}
-                strokeWidth={2}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+      <CardContent className="p-0">
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes tickerScroll {
+              from {
+                transform: translateX(0);
+              }
+              to {
+                transform: translateX(-50%);
+              }
+            }
+            .ticker-wrapper {
+              animation: tickerScroll 20s linear infinite;
+              display: flex;
+              width: fit-content;
+            }
+            .ticker-wrapper:hover {
+              animation-play-state: paused;
+            }
+          `
+        }} />
+        <div className="overflow-hidden">
+          <div className="ticker-wrapper">
+            {allStocks.map((stock, index) => (
+              <div
+                key={`${stock.symbol}-${index}`}
+                className="flex items-center gap-2 px-3 py-3 whitespace-nowrap flex-shrink-0"
+              >
+                <span className="text-sm font-semibold text-foreground">{stock.symbol}</span>
+                <span className="text-sm font-medium text-foreground">
+                  ${stock.price.toFixed(2)}
+                </span>
+                <div className="flex items-center gap-1">
+                  {stock.change >= 0 ? (
+                    <TrendingUp className="h-3 w-3" style={{ color: "hsl(145, 55%, 42%)" }} />
+                  ) : (
+                    <TrendingDown className="h-3 w-3" style={{ color: "hsl(0, 72%, 55%)" }} />
+                  )}
+                  <span
+                    className="text-xs font-medium"
+                    style={{
+                      color: stock.change >= 0 ? "hsl(145, 55%, 42%)" : "hsl(0, 72%, 55%)",
+                    }}
+                  >
+                    {stock.change >= 0 ? "+" : ""}{stock.changePercent.toFixed(2)}%
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </CardContent>
     </Card>
@@ -147,18 +158,7 @@ export function MarketOverview() {
   return (
     <aside className="flex flex-col gap-4">
       <h2 className="text-lg font-semibold text-foreground">Market Overview</h2>
-      <IndexCard
-        name="S&P 500"
-        value="5,245.60"
-        isPositive={true}
-        data={sp500Data}
-      />
-      <IndexCard
-        name="NASDAQ"
-        value="4,029.60"
-        isPositive={false}
-        data={nasdaqData}
-      />
+      <LiveStockTicker />
       <SectorHeatMap />
     </aside>
   )
